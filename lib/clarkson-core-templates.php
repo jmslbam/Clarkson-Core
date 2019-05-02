@@ -181,7 +181,7 @@ class Clarkson_Core_Templates {
 	 *
 	 * @param string $template the template.
 	 *
-	 * @return string $template the checked template.
+	 * @return string $template the rendered checked template or the passed template
 	 */
 	public function template_include( $template ) {
 		$extension = pathinfo( $template, PATHINFO_EXTENSION );

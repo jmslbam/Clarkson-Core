@@ -203,6 +203,11 @@ class Clarkson_Core_Templates {
 
 			if ( is_author() ) {
 				$page_vars['user'] = $object_loader->get_user( get_queried_object_id() );
+			} elseif ( is_archive() ) {
+				$post_type = get_queried_object();
+				if ( is_a( $post_type, 'WP_Post_Type' ) ) {
+					$page_vars['archive'] = $post_type;
+				}
 			} elseif ( is_tax() ) {
 				$term = get_queried_object();
 				// Custom Taxonomy Templates per Taxonomy type.
